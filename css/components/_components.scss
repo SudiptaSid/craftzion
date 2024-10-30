@@ -1,0 +1,47 @@
+/* ---------- Components ---------- */
+// Section Title
+.section_title {
+    @include left_border_title;
+}
+.section_title2 {
+    @include center_title;
+}
+
+// Timer
+.cs_timer {
+    @include timer;
+}
+
+// List Type 1
+.list_type1 {
+    @include list_type_1;
+}
+
+// Custom Form Modal
+.custom_modal_form {
+    @include custom_form_modal;
+}
+// Custom Banner Modal
+.custom_modal_banner {
+    @include custom_banner_modal;
+}
+
+// List Dropdown
+.list_dropdown {
+    @include custom_dropdown;
+}
+
+// Breadcumb
+.cs_breadcumb {
+    @include breadcumb;
+}
+
+// Pagination
+.cs_pagination {
+    @include pagination;
+}
+
+// Cart Table
+.cart_table {
+    @include cart_table_mx;
+}

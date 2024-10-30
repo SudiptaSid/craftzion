@@ -1,0 +1,89 @@
+// Button
+@mixin btns {
+    padding:$unit_10 $unit_10 * 1.5;
+    font-size:1em;
+    line-height:1;
+    border-radius:0px;
+    border:1px solid lighten($clr_black, 50%);
+    color:lighten($clr_black, 50%);
+    background-color:$clr_white;
+    text-transform: capitalize;
+    letter-spacing:1px;
+    font-weight:500;
+    cursor: pointer;
+    &:hover, &:focus {
+        border-color:lighten($clr_black, 80%);
+        color:$clr_black;
+        background-color:lighten($clr_black, 80%);
+    }
+    @media (max-width:$break_768) {
+        padding:$unit_10 - 4 $unit_10;
+    }
+    &.btn_red {
+        border-color:$clr_red;
+        color:$clr_red;
+        background-color:$clr_white;
+        &:hover, &:focus {
+            border-color:$clr_red;
+            color:$clr_white;
+            background-color:$clr_red;
+        }
+    }
+    &.btn_red_solid {
+        border-color:$clr_red;
+        color:$clr_white;
+        background-color:$clr_red;
+        &:hover, &:focus {
+            border-color:$clr_red;
+            background-color:lighten($clr_red, 12%);
+        }
+    }
+    &.btn_black {
+        border-color:$clr_black;
+        color:$clr_white;
+        background-color:$clr_black;
+        &:hover, &:focus {
+            border-color:$clr_black;
+            background-color:lighten($clr_black, 30%);
+        }
+    }
+    &.btn_grey {
+        border-color:lighten($clr_black, 90%);
+        color:$clr_black;
+        background-color:lighten($clr_black, 90%);
+        &:hover, &:focus {
+            border-color:$clr_red;
+            background-color:$clr_red;
+            color:$clr_white;
+        }
+    }
+}
+
+// Badge & Label
+@mixin badge {
+    padding:$unit_10 $unit_10 * 1.5;
+    text-transform: capitalize;
+    background-color:$clr_red;
+    color:$clr_white;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 1px;
+    &.cs_red {
+        background-color:$clr_red;
+    }
+    &.cs_green {
+        background-color:$clr_green;
+    }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    @include btns;
+}
+.link_color {
+    color:$clr_red !important;
+    cursor: pointer;
+    &:hover, &:active, &:visited {
+        color:$clr_red;
+    }
+}

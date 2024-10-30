@@ -1,0 +1,118 @@
+// Product Grid 1
+@mixin product_grid_1 {
+    background-color:$clr_white;
+    position: relative;
+    border:1px solid rgba($clr_black, 0.15);
+    .img_sec {
+        a {
+            display: block;
+        }
+        .cs_badges {
+            position: absolute;
+            top:$unit_10;
+            left:$unit_10;
+            span {
+                @include badge;
+                margin-bottom:$unit_10 / 5;
+                font-size:0.7em;
+                padding:$unit_10 / 5 $unit_10 / 2;
+                max-width: 70px;
+                &:last-child {
+                    margin-bottom:0;
+                }
+            }
+        }
+        .cs_fav {
+            position: absolute;
+            top:$unit_10;
+            right:$unit_10;
+            color:$clr_red;
+            background-color:$clr_white;
+            width:$unit_10 * 3;
+            height:$unit_10 * 3;
+            line-height:$unit_10 * 3;
+            border-radius:50%;
+            text-align: center;
+            cursor: pointer;
+            box-shadow:0px 0px 4px rgba($clr_black, 0.5);
+            &.active {
+                color:$clr_red;
+                background-color:$clr_white;
+            }
+        }
+    }
+    .details_sec {
+        padding:$unit_10 * 1;
+        .product_title {
+            color:lighten($clr_black, 25%);
+            display: block;
+            font-weight:700;
+            font-family:$secondary_font;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-bottom:$unit_10 / 2;
+        }
+        .cs_rtng {
+            margin-bottom:$unit_10 / 2;
+            line-height:0;
+        }
+        .cs_price {
+            span {
+                display: inline-block;
+                &.new_price {
+                    color:$clr_red;
+                    margin-right:$unit_10;
+                    font-weight:700;
+                }
+                &.old_price {
+                    text-decoration:line-through;
+                    color:lighten($clr_black, 75%);
+                }
+            }
+        }
+    }
+    &:hover {
+        .product_title {
+            color:$clr_red;
+        }
+    }
+}
+
+// Grid 1a
+@mixin grid_1a {
+    position: relative;
+    background-color:$clr_white;
+    a {
+        display: block;
+        background-color:$clr_white;
+        span {
+            display: block;
+            position: absolute;
+            z-index: 9;
+            width: 100%;
+            top: 50%;
+            left:0;
+            transform: translateY(-50%);
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            color:$clr_red;
+        }
+    }
+}
+
+/* ---------- Simple Full Banner ---------- */
+.banner_simple {
+    @include grid_1a;
+}
+
+/* ---------- Product Grid ---------- */
+.product_list {
+    @include product_grid_1;
+}
+
+/* ---------- Grid 1a ---------- */
+.grid_1a {
+    @include grid_1a;
+}

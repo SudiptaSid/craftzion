@@ -1,0 +1,517 @@
+// Title
+@mixin left_border_title {
+    position: relative;
+    border-left:5px solid $clr_red;
+    padding:$unit_10 $unit_10 * 2;
+    margin:$unit_10 * 3 0;
+    letter-spacing:2px;
+    @media (max-width:$break_768) {
+        padding:0 $unit_10;
+        margin:$unit_10 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom:0;
+        text-transform: capitalize;
+    }
+}
+
+// Center Title
+@mixin center_title {
+    position: relative;
+    margin:$unit_10 * 3 0;
+    text-align: center;
+    letter-spacing:2px;
+    @media (max-width:$break_768) {
+        margin:$unit_10 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom:0;
+        text-transform: capitalize;
+        span {
+            color:$clr_red;
+        }
+    }
+}
+
+// Text Slider [P]
+@mixin Vtext_slider {
+    margin-bottom:0px;
+    text-transform: capitalize;
+    strong {
+        color:$clr_red;
+        text-transform: uppercase;
+        font-weight:700;
+        font-family:$secondary_font;
+    }
+}
+
+// Logo
+@mixin logo_mix {
+    display: inline-block;
+    img {
+        height:$unit_10 * 6.5;
+        width:auto;
+        @media (max-width: $break_768) {
+            height:$unit_10 * 4;
+        }
+    }
+}
+
+// Dropdown
+@mixin custom_dropdown {
+    position: relative;
+    display: inline-block;
+    .dropdown-toggle {
+        position: relative;
+        color:$clr_black;
+        // padding-right:$unit_10 * 2;
+        &:hover {
+            color:$clr_red;
+        }
+        &:after, &:before {
+            content:'';
+            border:none;
+            position: absolute;
+            width:1px;
+            height:10px;
+            background-color:$clr_black;
+            margin: 0;
+            right: 4px;
+            top: 6px;
+            display: none;
+        }
+        &:after {
+            transform: rotate(45deg);
+        }
+        &:before {
+            transform: rotate(-45deg);
+            right: 10px;
+        }
+    }
+    &.show {
+        .dropdown-toggle {
+            &:after, &:before {
+                right: 5px;
+            }
+        }
+    }
+    .dropdown-menu {
+        border-radius:0;
+        border:1px solid rgba($clr_black, 0.2);
+        padding:0;
+        min-width:auto;
+        .dropdown-item {
+            font-size:0.8em;
+            padding:$unit_10 / 2 $unit_10 * 1.5;
+            background-color:$clr_white;
+            color:$clr_black;
+            &:hover {
+                background-color:$clr_red;
+                color:$clr_white;
+            }
+        }
+    }
+}
+
+// Link with number
+@mixin number_link {
+    color:$clr_black;
+    padding:0 $unit_10 / 2;
+    position: relative;
+    display: inline-block;
+    span {
+        color:$clr_white;
+        background-color:$clr_red;
+        min-width: $unit_10 * 1.5;
+        height: $unit_10 * 1.5;
+        line-height: $unit_10 * 1.5;
+        font-size: 0.7em;
+        font-weight:700;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+    }
+}
+
+// Custom Close Icon
+@mixin close_icon1 {
+    position: relative;
+    max-width:$unit_10 * 2;
+    height:$unit_10 * 2;
+    span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color:rgba($clr_black, 0.5);
+        position: absolute;
+        top: $unit_10;
+        &:first-child {
+            transform: rotate(45deg);
+        }
+        &:last-child {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+// Sidemenu Ul
+@mixin sidemenu_ul {
+    .side_title {
+        font-weight:700;
+        font-family:$secondary_font;
+        margin:10px -5px 0px -5px;
+        text-transform: uppercase;
+        letter-spacing:5px;
+        padding:$unit_10 $unit_10 * 2.5;
+        color:$clr_black;
+        border-bottom:1px solid rgba($clr_black, 0.1);
+    }
+    li {
+        padding:$unit_10 / 2;
+        border-bottom:1px solid rgba($clr_black, 0.1);
+
+        a {
+            color:$clr_black;
+            padding:$unit_10 / 2 $unit_10 * 2;
+            display: block;
+            text-transform: capitalize;
+            &:hover {
+                color:$clr_red;
+            }
+        }
+    }
+}
+
+// Countdown Timer
+@mixin timer {
+    display: inline-block;
+    .timer-wrapper {
+        display: inline-block;
+        margin-right: $unit_10 * 2;
+        text-align: center;
+        .time {
+            display: block;
+            background-color:$clr_white;
+            color:$clr_black;
+            line-height: $unit_10 * 6;
+            width: $unit_10 * 5;
+            height: $unit_10 * 6;
+            box-shadow: 0px 2px 4px 0px rgba($clr_black, 0.25);
+            border-radius: 5px;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        .text {
+            display: block;
+            color:$clr_black;
+            text-transform: capitalize;
+            margin-top: 10px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+    }
+}
+
+// List Types
+@mixin  list_type_1 {
+    font-size: 0.9em;
+    li {
+        list-style-type: none;
+        margin-bottom: $unit_10;
+        a {
+            display: inline-block;
+            color:$clr_black;
+            text-transform: capitalize;
+            &:hover {
+                text-decoration: underline;
+                color:$clr_red;;
+            }
+        }
+    }
+}
+
+// Social List
+@mixin social_list {
+    margin-bottom:$unit_10;
+    ul {
+        li {
+            display: inline-block;
+            margin-right:$unit_10 / 2;
+            a {
+                width:$unit_10 * 2.5;
+                height:$unit_10 * 2.5;
+                line-height:$unit_10 * 2.5;
+                background-color:$clr_red;
+                color:$clr_white;
+                text-align: center;
+                display: block;
+                &:hover {
+                    background-color:lighten($clr_red, 10%);
+                }
+            }
+        }
+    }
+}
+
+// Custom Modal
+@mixin modal_close {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: $unit_10 * 1.5;
+    right:$unit_10 * 1.5;
+    z-index:1060;
+}
+@mixin modal_img_title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size:$unit_10 * 3;
+    line-height:$unit_10 * 4;
+    font-weight: 300;
+    padding: 0 $unit_10 * 3;
+    color: $clr_white;
+    width: 100%;
+}
+@mixin modal_img_overlay {
+    content: "";
+    background-color:rgba($clr_black, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@mixin modal_content {
+    border:none;
+    border-radius:0;
+    box-shadow:none;
+}
+@mixin modal_dialog_width {
+    width:100%;
+    @media (min-width:$break_768) {
+        width:720px;
+        max-width:720px;
+    }
+}
+@mixin custom_form_modal {
+    .modal-dialog {
+        @include modal_dialog_width;
+        .modal-content {
+            @include modal_content;
+        }
+    }
+    .cs_body {
+        display: flex;
+        flex-wrap:wrap;
+        .cs_left {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            text-align: center;
+            width:50%;
+            position: relative;
+            @media (max-width:$break_768) {
+                display: none;
+            }
+            &:before {
+                @include modal_img_overlay;
+            }
+            .cs_left_title {
+                @include modal_img_title;
+            }
+        }
+        .cs_right {
+            width:50%;
+            @media (max-width:$break_768) {
+                width:100%;
+            }
+            .modal-header {
+                padding:$unit_10 * 1.5;
+                .close {
+                    @include modal_close;
+                }
+            }
+            .modal-body {
+                padding:$unit_10 * 1.5;
+                .cs_social {
+                    @include social_list;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+@mixin custom_banner_modal {
+    .modal-dialog {
+        @include modal_dialog_width;
+        .modal-content {
+            @include modal_content;
+        }
+        .close {
+            @include modal_close;
+        }
+        .modal_body {
+            text-align: center;
+            &:before {
+                @include modal_img_overlay;
+            }
+            .cs_left_title {
+                @include modal_img_title;
+            }
+        }
+    }
+}
+
+// Breadcumb
+@mixin breadcumb {
+    ul {
+        font-size:0.8em;
+        @media (max-width:$break_768) {
+            font-size:0.9em;
+        }
+        li {
+            text-transform: capitalize;
+            display: inline-block;
+            letter-spacing:1px; 
+            &:after {
+                content:'/';
+                margin:0 $unit_10 / 2;
+            }
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+            a {
+                color:$clr_black;
+                font-weight:500;
+                &:hover {
+                    color:$clr_red;
+                }
+            }
+            span {
+                font-weight:500;
+                color:lighten($clr_black, 60%);
+            }
+        }
+    }
+}
+
+// Pagination
+@mixin pagination {
+    text-align: center;
+    margin-top:$unit_10 * 1.5;
+    ul {
+        li {
+            display: inline-block;
+            margin:$unit_10 / 4;
+            a {
+                display: block;
+                min-width:$unit_10 * 3.5;
+                height:$unit_10 * 3.5;
+                line-height:$unit_10 * 3.5;
+                background-color:lighten($clr_black, 95%);
+                color: $clr_black;
+                font-weight:500;
+                &:hover, &.active {
+                    background-color:lighten($clr_black, 85%);
+                    color:$clr_red;
+                }
+            }
+        }
+    }
+}
+
+// Cart Table
+@mixin cart_table_mx {
+    text-align: left;
+    .cart_table_row {
+        position: relative;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        border-top: 1px solid #f7f7f7;
+        padding: $unit_10 * 1.5 0;
+        .cart_table_cell {
+            display: table-cell;
+            vertical-align: middle;
+            @media (max-width:$break_768) {
+                display: block;
+            }
+            &.cart_table_img {
+                width: 140px;
+                @media (max-width:$break_768) {
+                    float: left;
+                    width:100px;
+                }
+                a {
+                    img {
+                        width:80px;
+                    }
+                }
+            }
+            h6 {
+                text-transform: uppercase;
+                margin-bottom:0;
+                font-size:0.8em;
+                letter-spacing:2px;
+            }
+            h5 {
+                font-size: 1.2em;
+            }
+            h5, h6 {
+                a {
+                    color:$clr_58;
+                }
+            }
+            &.cart_table_price {
+                width: 15%;
+                font-size: 11px;
+                line-height: 18px;
+                color: #424242;
+                text-transform: uppercase;
+                @media (max-width:$break_768) {
+                    width:100%;
+                }
+                b {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $clr_black;
+                }
+            }
+            &.cart_table_addtocart {
+                text-align: right;
+                @media (max-width:$break_768) {
+                    text-align: left;
+                    margin-top:$unit_10 / 2;
+                }
+                .cart_table_close {
+                    font-size: 13px;
+                    line-height: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 4px;
+                    text-decoration: none;
+                    color:$clr_black;
+                }
+            }
+            &.cart_table_icon_link {
+                text-align: right;
+                @media (max-width:$break_768) {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+                a {
+                    margin-left:$unit_10;
+                    color:$clr_red;
+                    font-size:1.2em;
+                }
+            }
+        }
+    }
+}

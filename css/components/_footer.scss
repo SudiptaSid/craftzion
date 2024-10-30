@@ -1,0 +1,151 @@
+/* ---------- Footer ---------- */
+footer {
+    background-color:lighten($clr_black, 95%);
+    .footer1 {
+        border-top:1px solid rgba($clr_black, 0.15);
+        h6 {
+            margin-bottom:$unit_10 / 2;
+            text-transform: capitalize;
+        }
+        p {
+            margin:0;
+            text-transform: capitalize;
+        }
+        .desktop_view {
+            text-align: center;
+            padding:$unit_10 * 3;
+            border-right:1px solid rgba($clr_black, 0.15);
+            &:first-child {
+                border-left:1px solid rgba($clr_black, 0.15);
+            }
+            @media (min-width: $break_768) and (max-width: $break_991) {
+                padding:$unit_10 * 2 $unit_10 * 1.5;
+            }
+            @media (max-width: $break_768) {
+                display: none;
+            }
+        }
+        .mobile_view {
+            display: none;
+            text-align: center;
+            padding: $unit_10 $unit_10 * 1.5;
+            @media (max-width: $break_768) {
+                display: block;
+            }
+        }
+    }
+    .footer2 {
+        border-top:1px solid rgba($clr_black, 0.15);
+        padding:$unit_10 * 5 0;
+        h6 {
+            text-transform: capitalize;
+            margin-bottom:$unit_10 * 2;
+        }
+        ul {
+            @include list_type_1;
+            &.f_contact {
+                li {
+                    padding-left:$unit_10 * 2;
+                    position: relative;
+                    margin-bottom:$unit_10 * 1.5;
+                    i {
+                        position: absolute;
+                        left: 0;
+                        font-size: 1.2em;
+                        top: 0;
+                    }
+                }
+            }
+            &.f_social {
+                margin-bottom:$unit_10 * 2;
+                li {
+                    margin-bottom: 0;
+                    margin-right:$unit_10 / 2;
+                    display: inline-block;
+                    img {
+                        height:$unit_10 * 3;
+                        width:auto;
+                    }
+                }
+            }
+        }
+        p {
+            margin-bottom:$unit_10 / 2;
+            font-weight:700;
+            span {
+                color:$clr_red;
+            }
+        }
+        form {
+            position: relative;
+            .form-control {
+                padding-right:$unit_10 * 6;
+            }
+            button {
+                border: 1px solid $clr_red;
+                background-color: $clr_red;
+                color: #fff;
+                position: absolute;
+                top:0;
+                right:0;
+                padding:$unit_10 / 2 $unit_10 * 1.5;
+                height:100%;
+                cursor: pointer;
+                text-transform: uppercase;
+                &:focus, &:hover {
+                    background-color: lighten($clr_red, 8%);
+                }
+            }
+        }
+    }
+    .footer3 {
+        border-top:1px solid rgba($clr_black, 0.15);
+        padding:$unit_10 * 5 0;
+        .f_logo {
+            a {
+                img {
+                    height:$unit_10 * 6;
+                    width:auto;
+                    @media (max-width: $break_768) {
+                        height:$unit_10 * 4;
+                    }
+                }
+            }
+            p {
+                margin:0;
+            }
+        }
+        h6 {
+            margin:$unit_10 * 2.5 0;
+            font-size:1.2em;
+        }
+        p {
+            margin:0;
+            font-size:0.9em;
+        }
+    }
+    .footer4 {
+        background-color:$clr_black;
+        padding:$unit_10 / 2;
+        .row {
+            align-items:center;
+        }
+        .left_col {
+            color:$clr_white;
+            font-size:0.9em;
+            @media (max-width: $break_768) {
+                text-align: center;
+            }
+        }
+        .right_col {
+            text-align: right;
+            @media (max-width: $break_768) {
+                text-align: center;
+            }
+            img {
+                height:$unit_10 * 2.5;
+                width:auto;
+            }
+        }
+    }
+}

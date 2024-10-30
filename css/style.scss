@@ -1,0 +1,28 @@
+/* ---------- Bootstrap ---------- */
+@import "../plugins/bootstrap/scss/bootstrap.scss";
+
+/* ---------- Font Awesome Icon ---------- */
+@import "../plugins/font-awesome/scss/font-awesome.scss";
+
+/* ---------- Slick Slider ---------- */
+@import "../plugins/slick/slick.scss";
+@import "../plugins/slick/slick-theme.scss";
+
+/* ---------- Font ---------- */
+@import "../fonts/open_sans/stylesheet.scss";
+@import "../fonts/pt_sans/stylesheet.scss";
+
+/* ---------- Star Rating ---------- */
+@import "../plugins/star_rating/star_rating.scss";
+
+/* ---------- Components Folder ---------- */
+@import "components/variables";
+@import "components/mixins";
+@import "components/reset";
+@import "components/buttons";
+@import "components/form";
+@import "components/components";
+@import "components/grids";
+@import "components/header";
+@import "components/footer";
+@import "components/section";
